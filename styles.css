@@ -67,6 +67,8 @@
 }
 
 body {
+    min-height: 100vh;
+    place-content: center;
     background-color: var(--background);
     font-family: var(--fm-main);
     font-size: 0.813rem;
@@ -79,9 +81,10 @@ body {
 .container {
   display: grid;
   gap: 1.4rem;
+  max-width: 1300px;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 700px) {
   .container {
     grid-template-columns: 1fr 1fr;
   }
