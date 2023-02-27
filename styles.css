@@ -1,0 +1,190 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+:root {
+
+    --color-main: hsl(263, 55%, 52%);
+    --color-dark-light: hsl(217, 19%, 35%);
+    --color-dark-dark: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    --color-text: hsl(0, 0%, 81%);
+    --background: hsl(210, 46%, 95%);
+
+    --fm-main: 'Barlow Semi Condensed', sans-serif;
+    --fw-reg: 500;
+    --fw-bold: 600;
+}
+
+body {
+    background-color: var(--background);
+    font-family: var(--fm-main);
+    font-size: 0.813rem;
+    color: var(--color-text);
+    padding: 4rem 2.3rem;
+}
+
+/* Grid Area and Media queries */
+
+.container {
+  display: grid;
+  gap: 1.4rem;
+}
+
+@media (min-width: 550px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .whittle {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+}
+
+
+@media (min-width: 990px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .whittle {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+}
+
+
+/* Main Cards */
+
+.properties {
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.clifford {
+    background-color: var(--color-main);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 2rem;
+}
+
+.walters {
+    background-color: var(--color-dark-light);
+}
+
+.harmon {
+    background-color: var(--White);
+    -webkit-box-shadow: 7px 8px 26px 1px rgba(184,184,184,0.66);
+    -moz-box-shadow: 7px 8px 26px 1px rgba(184,184,184,0.66);
+    box-shadow: 7px 8px 26px 1px rgba(184,184,184,0.66);
+}
+
+.abrams {
+    background-color: var(--color-dark-dark);
+}
+
+.whittle {
+    background-color: var(--White);
+    -webkit-box-shadow: 7px 8px 26px 1px rgba(184,184,184,0.66);
+    -moz-box-shadow: 7px 8px 26px 1px rgba(184,184,184,0.66);
+    box-shadow: 7px 8px 26px 1px rgba(184,184,184,0.66);
+}
+
+/* Content */
+
+.picture {
+    width: 35px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 1px solid none;
+    float: left;
+    margin-right: 1rem;
+}
+
+.clifford > .profile > .picture {
+  border: 2px solid hsl(263, 90%, 72%);
+}  
+
+.abrams > .profile > .picture {
+  border: 2px solid var(--color-main);
+}
+
+.verified-user {
+    opacity: 50%;
+}
+
+.header {
+    color: var(--White);
+    font-weight: var(--fw-bold);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.2;
+}
+
+.main-text {
+    opacity: 70%;
+    margin-top: 1rem;
+}
+
+.darker-text {
+    color: var(--color-dark-light)
+}
